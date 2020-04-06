@@ -1,8 +1,8 @@
 #!/bin/bash
 #variables (constants) used in the scripts
-aksrgname="kubebow7RG"
-aksclustername="kubebow7"
-aksdnsprefix="kubebow7"
+aksrgname="bak8sRG"
+aksclustername="bak8sCluster"
+aksdnsprefix="bak8s"
 aksvmsize="Standard_B2s"
 akslocation="eastus2"
 aadserverappid=""
