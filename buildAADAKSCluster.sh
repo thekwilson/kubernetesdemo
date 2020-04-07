@@ -20,9 +20,10 @@ servicecidr="192.0.3.0/24"
 dockerbridgeaddress="172.17.0.1/16"
 # Guidance - https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
 # use --outbound-type = userDefinedRouting when you want to avoid Public IP & LB for outbound COMS
+starttime=`date +"%Y-%m-%d %T"`
+SECONDS=0
 
-
-
+echo "Process Starting: " $starttime
 echo "Create Resource Group for the Kubernetes cluster (AKS)"
 az group create --name $aksrgname --location $akslocation
 
@@ -44,6 +45,11 @@ az aks get-credentials --resource-group $aksrgname --name $aksclustername --admi
 
 echo "Run manifest to setup the cluster admins from the AAD directory group"
 kubectl apply -f AADClusterAdmins-rb.yml
+
+stoptime=`date +"%Y-%m-%d %T"`
+echo "Process Completed: " $stoptime
+duration=$SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
 
 #install Helm Tiller - this assumes HELM CLI already in place
 #helm init
