@@ -20,9 +20,12 @@ servicecidr="192.0.3.0/24"
 dockerbridgeaddress="172.17.0.1/16"
 # Guidance - https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
 # use --outbound-type = userDefinedRouting when you want to avoid Public IP & LB for outbound COMS
-starttime=`date +"%Y-%m-%d %T"`
+
+# This is a bash internal function that will increment every second onto the value assigned (handy)
+# So we can set it to 0 and it will tally all the seconds for the commands to run
 SECONDS=0
 
+starttime=`date +"%Y-%m-%d %T"`
 echo "Process Starting: " $starttime
 echo "Create Resource Group for the Kubernetes cluster (AKS)"
 az group create --name $aksrgname --location $akslocation
@@ -40,11 +43,13 @@ az aks create --resource-group $aksrgname --name $aksclustername --node-count 2 
 --docker-bridge-address $dockerbridgeaddress \
 --service-cidr $servicecidr \
 
+#This section retrieves the full cluster Admin credentials via certificate (note bypasses AAD)
 echo "Get AKS credentials for the newly allocated cluster to setup Kubectl"
 az aks get-credentials --resource-group $aksrgname --name $aksclustername --admin
 
-echo "Run manifest to setup the cluster admins from the AAD directory group"
-kubectl apply -f AADClusterAdmins-rb.yml
+# THIS Section is optional it is an example of a call to a YAML manifest to assign security to a user or group in AAD
+#echo "Run manifest to setup the cluster admins from the AAD directory group"
+#kubectl apply -f AADClusterAdmins-rb.yml
 
 stoptime=`date +"%Y-%m-%d %T"`
 echo "Process Completed: " $stoptime
