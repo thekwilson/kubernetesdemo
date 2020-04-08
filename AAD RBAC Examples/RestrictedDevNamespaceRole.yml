@@ -1,0 +1,44 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: dev-user-restricted-access
+  namespace: dev
+rules: #THESE RULES ARE INTENDED TO ALLOW ALL BUT SERVICE MANIPULATION AS IT COULD OPEN PUBLIC IPS
+- apiGroups: [""] #ALSO NOTE SOME APIS ARE NOT SCOPED TO THE NAMESPACE FOR THOSE YOU WOULD NEED A CLUSTERROLE DEFINITION
+  resources: ["service"]
+  verbs: ["list","get","watch"]
+- apiGroups: [""]
+  resources: ["bindings","configmaps","endpoints","events","limitranges","persistentvolumeclaims","pods","podtemplates","replicationcontrollers","resourcequotas","secrets","serviceaccounts"]
+  verbs: ["*"]
+- apiGroups: ["batch"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["apps"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["authorization.k8s.io"]
+  resources: ["localsubjectaccessreviews"]
+  verbs: ["*"]
+- apiGroups: ["autoscaling"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["coordination.k8s.io"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["extensions"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["metrics.k8s.io"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["policy"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["storage.k8s.io"]
+  resources: ["*"]
+  verbs: ["*"]
+
+
+  
+
+  

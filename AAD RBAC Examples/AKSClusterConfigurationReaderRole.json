@@ -1,0 +1,22 @@
+
+{
+
+"Name":"AKS Cluster Credential Reader",
+   "Id":"a7db667e-28c6-440c-8e65-6bf9a30a7b3a",
+   "IsCustom":true,
+   "Description":"Can read AKS credentials so they can establish their own local credential configuration.",
+   "Actions":[
+      "Microsoft.ContainerService/managedClusters/accessProfiles/listCredential/action",
+      "Microsoft.ContainerService/managedClusters/listClusterUserCredential/action"
+   ],
+   "NotActions":[
+   ],
+   "DataActions":[
+   ],
+   "NotDataActions":[
+   ],
+   "AssignableScopes":[
+      "/subscriptions/4fa141ee-5558-4bf3-b338-27e747b044a5"
+   ]
+
+}
