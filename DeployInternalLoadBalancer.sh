@@ -66,9 +66,14 @@ sleep 60
 echo "Querying All Services in the cluster, the private IP should be assigned to your internal-app under the EXTERNAL-IP column"
 kubectl get service
 
+#EXAMPLE OF AZURE CLI SCRIPT STEPS TO REMOVE ROLE ASSIGNMENT FOR THE CLUSTER SP
+#az role assignment delete --assignee-object-id $aksserviceprincipal --role "$vnetrbacrole" --scope $vnetresourceid
+
 
 #SCRIPT FOOTER
 stoptime=`date +"%Y-%m-%d %T"`
 echo "Process Completed: " $stoptime
 duration=$SECONDS
 echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
+
+
