@@ -23,9 +23,9 @@ Example #2: Secure Objects in Kubernetes with AAD by:
     * [BuildDevNamespaceControls.sh](BuildDevNamespaceControls.sh) - this is the primary script that creates a namespace, runs the manifest to create a custom role, runs the manifest to create the binding of the custom role to the targeted AAD Group/User.  
 
 * To test you will need to log in to a terminal with the Azure CLI (You can use the Azure cloud shell, shell.azure.com) as the AAD user/group member you assigned.  The command to pull the user creds for the base k8s Config is:
-'''
+```
   az aks get-credentials --name YOURCLUSTERNAME --resource-group YOURCLUSTERRESOURCEGROUP --overwrite-existing
-'''
+```
 Then you can validate with Kubectl commands that you only have access to the Namespace & role permissions assigned.
 
 Example #3: Provision a sample/example Kubernetes Application that:
