@@ -56,19 +56,3 @@ echo "Process Completed: " $stoptime
 duration=$SECONDS
 echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
 
-#install Helm Tiller - this assumes HELM CLI already in place
-#helm init
-#helm repo update
-
-
-#echo "Start the SSH tunnel for the Kubernetes management website"
-#az aks browse --name $aksclustername --resource-group $aksrgname
-#az aks get-credentials --resource-group $aksrgname --name $aksclustername
-
-#ORIGINAL
-#echo "Create Resource Group for the Kubernetes cluster (AKS)"
-#az group create --name kubebow2RG --location eastus
-#echo "Create the AKS Cluster in the new Resource Group"
-#az aks create --resource-group kubebow2RG --name KubeBow2 --node-count 1 --generate-ssh-key --node-vm-size Standard_B2s --dns-name-prefix kubebow2
-#echo "Start the SSH tunnel for the Kubernetes management website"
-#az aks browse --name KubeBow2 --resource-group kubebow2R

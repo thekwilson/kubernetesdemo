@@ -10,6 +10,16 @@ aadserverappsecret=""
 aadclientappid=""
 aadtenantid="d3af6bc3-7ceb-4290-a5af-ffad9eaa7450"
 
+
+
+# This is a bash internal function that will increment every second onto the value assigned (handy)
+# So we can set it to 0 and it will tally all the seconds for the commands to run
+SECONDS=0
+
+starttime=`date +"%Y-%m-%d %T"`
+echo "Process Starting: " $starttime
+
+
 # Phase 1 Script the Creation of AAD objects.  This is optional if you already have the values.
 # This phase is also optional if you want to manually create in a seperate process.
 # These scripts require the user to have Azure AD Tenant Administrative permissions
@@ -83,3 +93,8 @@ az ad app permission grant --id $aadclientappid --api $aadserverappid
 
 echo "CLIENT APP Provisioning Process Completed"
 # END OPTIONAL Phase 1
+
+stoptime=`date +"%Y-%m-%d %T"`
+echo "Process Completed: " $stoptime
+duration=$SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."

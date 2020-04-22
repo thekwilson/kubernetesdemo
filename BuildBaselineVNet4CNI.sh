@@ -1,6 +1,5 @@
 #!/bin/bash
 #variables (constants) used in the scripts
-
 aksrgname="bak8sRG"
 vnetname="bak8sClusterVNET"
 #IN Azure the first 4 and last 1 IP, total of 5 IPs are reserved per vnet
@@ -13,6 +12,12 @@ subnetid=""
 subnetprefix="10.0.0.0/23"
 akslocation="eastus2"
 
+# This is a bash internal function that will increment every second onto the value assigned (handy)
+# So we can set it to 0 and it will tally all the seconds for the commands to run
+SECONDS=0
+
+starttime=`date +"%Y-%m-%d %T"`
+echo "Process Starting: " $starttime
 
 
 echo "Create Resource Group for the Kubernetes cluster (AKS) == " $aksrgname
@@ -30,3 +35,7 @@ subnetid=$(az network vnet subnet list \
 
 echo "Subnet ID = " $subnetid
 
+stoptime=`date +"%Y-%m-%d %T"`
+echo "Process Completed: " $stoptime
+duration=$SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
