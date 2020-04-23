@@ -19,8 +19,8 @@ Example #2: Secure Objects in Kubernetes with AAD by:
 * Applying a new Kubernetes Role Definition manifest/yml file that enables whatever APIs and verbs that role needs 
 * Applying a Kubernetes Role Binding to bind the role created to AAD object (users and groups)
 * The primary scripts to run are:
-    * [CreateDemoAADGroupsAndUsers.sh](CreateDemoAADGroupsAndUsers.sh) (Optional) - this script will automate the creation of a user and group in AAD for testing purposes and return the necessary object IDs. The script will also assign the Kubernetes Cluster User Role (Azure RBAC) to the newly created group on your targeted AKS Cluster.  It uses the Azure CLI (az ad, az role, az aks) and requires some AAD permissions.  You can skip this step and just provide your own values in the next script/steps.
-    * [BuildDevNamespaceControls.sh](/AAD RBAC Examples/BuildDevNamespaceControls.sh) - this is the primary script that creates a namespace, runs the manifest to create a custom role, runs the manifest to create the binding of the custom role to the targeted AAD Group/User.  
+    * [CreateDemoAADGroupsAndUsers.sh](AAD%20RBAC%20Examples/CreateDemoAADGroupsAndUsers.sh) (Optional) - this script will automate the creation of a user and group in AAD for testing purposes and return the necessary object IDs. The script will also assign the Kubernetes Cluster User Role (Azure RBAC) to the newly created group on your targeted AKS Cluster.  It uses the Azure CLI (az ad, az role, az aks) and requires some AAD permissions.  You can skip this step and just provide your own values in the next script/steps.
+    * [BuildDevNamespaceControls.sh](AAD%20RBAC%20Examples/BuildDevNamespaceControls.sh) - this is the primary script that creates a namespace, runs the manifest to create a custom role, runs the manifest to create the binding of the custom role to the targeted AAD Group/User.  
 
 * To test you will need to log in to a terminal with the Azure CLI (You can use the Azure cloud shell, shell.azure.com) as the AAD user/group member you assigned.  The command to pull the user creds for the base k8s Config is:
 ```
