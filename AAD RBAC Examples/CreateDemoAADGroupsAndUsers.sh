@@ -11,9 +11,9 @@
 
 
 #Variables or Constants used in the script:
-devgroupname="k8sdevg3"
+devgroupname="k8sdevg4"
 devgroupid="" #empty will be generated in the script
-devusername="kubernetesdev3"
+devusername="kubernetesdev4"
 aaddomainname="kwilson.onmicrosoft.com"
 devusernameupn=$devusername"@"$aaddomainname
 devuserid="" #empty will be generated in the script

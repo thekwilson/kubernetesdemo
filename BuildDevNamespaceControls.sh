@@ -1,5 +1,3 @@
-
-
 # This script attempts to:
 # - creates a new dev namespae
 # - creates a new role for devs and assign to that namespace
@@ -12,6 +10,7 @@ devgroupname="k8sdev"
 devgroupid="" #empty will be queried/populated in the script
 # If you want to target a single user this should have the full UPN:  user@somedomain.onmicrosoft.com
 devusernameupn=""
+devuserid="" #empty will be queried/populated in the script
 # The name you want to use for the Kubernetes Namespace you will create
 devnamespacelabel="dev"
 # The file name of the YAML manifest which defines your restricted role
@@ -40,7 +39,9 @@ echo "Retrieved AAD Group Object ID: $devgroupid"
 echo "Assigning the AAD Group: $devgroupname ($devgroupid) to the Kubernetes restricted dev role: $devrolename in the namespace: $devnamespacelabel"
 # Rolebindings needs a binding name, a role name you are targeting and a subject (group or user)
 kubectl create rolebinding $devrolebindingname --role=$devrolename --group=$devgroupid --namespace=$devnamespacelabel
-
+# ALTERNATIVE: If you want the rolebinding for an AAD User vs a Group you can use this format
+# devuserid=$(az ad user show --id $devusernameupn --query objectId -o tsv)
+# kubectl create rolebinding $devrolebindingname --role=$devrolename --user=$devuserid --namespace=$devnamespacelabel
 
 stoptime=`date +"%Y-%m-%d %T"`
 echo "Process Completed: " $stoptime
@@ -55,4 +56,3 @@ echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
 # kubectl get all --namespace=$devnamespacelabel
 # Command to get services:
 # kubectl get service --namespace=$devnamespacelabel
- 

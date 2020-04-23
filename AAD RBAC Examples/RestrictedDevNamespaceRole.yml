@@ -3,8 +3,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: dev-user-restricted-access
   namespace: dev
-rules: #THESE RULES ARE INTENDED TO ALLOW ALL BUT SERVICE MANIPULATION AS IT COULD OPEN PUBLIC IPS
-- apiGroups: [""] #ALSO NOTE SOME APIS ARE NOT SCOPED TO THE NAMESPACE FOR THOSE YOU WOULD NEED A CLUSTERROLE DEFINITION
+rules: #These are example rules that show how you can limit CRUD operations (verbs) agains the K8s API
+- apiGroups: [""] # This example reduces the access to create/delete services and just leaves read/view operations
   resources: ["service"]
   verbs: ["list","get","watch"]
 - apiGroups: [""]
