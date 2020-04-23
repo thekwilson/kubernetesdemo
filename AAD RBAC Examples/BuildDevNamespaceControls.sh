@@ -6,10 +6,10 @@
 # Based on this documentation: https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac
 
 # AAD Group Name, we do a lookup on this name to pull the ObjectID for Kubernetes role assignment
-devgroupname="k8sdev"
+devgroupname="k8sdevg4"
 devgroupid="" #empty will be queried/populated in the script
 # If you want to target a single user this should have the full UPN:  user@somedomain.onmicrosoft.com
-devusernameupn=""
+devusernameupn="" #optionally used if wanting to target a user
 devuserid="" #empty will be queried/populated in the script
 # The name you want to use for the Kubernetes Namespace you will create
 devnamespacelabel="dev"
