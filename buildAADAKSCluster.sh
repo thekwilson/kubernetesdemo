@@ -8,8 +8,8 @@ aksdnsprefix="bak8s"
 aksvmsize="Standard_B2s"
 akslocation="eastus2"
 aadserverappid="2f617261-0ca1-448a-b0a9-3aadfe265671"
-aadserverappsecret="640aae5d-f002-491d-a814-b63dca693990"
-aadclientappid="ff0cd904-4fc1-41d3-bbf0-1d79c157c312"
+aadserverappsecret="111aae1a-a111-111a-a111-a11aaa111111" #Replace this fake secret with a real one
+aadclientappid="ff0cd904-1111-1111-1111-111111111111"
 aadtenantid="d3af6bc3-7ceb-4290-a5af-ffad9eaa7450"
 #You need to provide the Subnet ID of the existing subnet or one you create
 #See other bash file for creating vnet/subnet quickly for a lab
