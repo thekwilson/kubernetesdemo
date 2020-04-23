@@ -1,6 +1,5 @@
 #!/bin/bash
-
-
+# SAMPLE CODE
 # This script can deploy an internal load balancer with a private IP by using the Kubernetes Service
 # construct with some AKS specific annotations
 # Based on this documentation: https://docs.microsoft.com/en-us/azure/aks/internal-lb

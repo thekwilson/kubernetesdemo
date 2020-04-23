@@ -1,4 +1,5 @@
 #!/bin/bash
+# SAMPLE CODE
 #variables (constants) used in the scripts
 aksrgname="bak8sRG"
 vnetname="bak8sClusterVNET"

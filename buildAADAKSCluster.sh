@@ -1,6 +1,7 @@
 #!/bin/bash
-#variables (constants) used in the scripts
+# SAMPLE CODE
 
+#variables (constants) used in the scripts
 aksrgname="bak8sRG"
 aksclustername="bak8sCluster"
 aksdnsprefix="bak8s"

@@ -1,3 +1,4 @@
+# SAMPLE CODE
 # This script attempts to:
 # - creates a new dev namespae
 # - creates a new role for devs and assign to that namespace

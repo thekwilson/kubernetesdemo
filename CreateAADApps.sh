@@ -1,4 +1,6 @@
 #!/bin/bash
+# SAMPLE CODE
+
 #variables (constants) used in the scripts
 aksrgname="bak8sRG"
 aksclustername="bak8sCluster"

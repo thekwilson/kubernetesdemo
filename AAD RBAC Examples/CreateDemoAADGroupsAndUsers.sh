@@ -1,5 +1,4 @@
-
-
+# SAMPLE CODE
 # This script attempts to:
 # - creates an Azure Active Directory (AAD) Group for Developers
 # - assign the Developers AAD Group the Kubernetes Cluster User Role (built in Azure RBAC role for AKS)

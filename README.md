@@ -1,4 +1,4 @@
-# Kubernetes Scripting & Example Building Content
+# Kubernetes Scripting & Example Building Content (SAMPLE CODE)
 
 This is a collection of scripts and demo artifacts for working with/manipulating Azure Kubernetes Services (AKS)
 
@@ -31,9 +31,9 @@ Then you can validate with Kubectl commands that you only have access to the Nam
 Example #3: Provision a sample/example Kubernetes Application that:
 * Uses an Internal Load Balancer for private IP ingress 
 * Targets a specific Namespace (typically Namespace provisioned above)
-* Deploys a basic web app that can be browsed on 80/442 over the private IP issued
+* Deploys a basic web app that can be browsed on 80/443 over the private IP issued
 * The primary scripts to run:
-    * [DeployInternalLoadBalancer.sh](DeployInternalLoadBalancer.sh) -
+    * [DeployInternalLoadBalancer.sh](DeployInternalLoadBalancer.sh)
 
 Example #4: Provision a new AKS Cluster that is using a **preview feature**  to control cluster egress and use UDR routes verses the default Public IP and LB for Cluster internet egress (outbound traffic)
 * See this article with example steps: https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
