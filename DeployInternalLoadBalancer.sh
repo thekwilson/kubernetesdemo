@@ -60,7 +60,7 @@ az role assignment create --assignee-object-id $aksserviceprincipal --role "$vne
 echo "Deploying the manifest: $samplemanifest to Namespace: $devnamespacelabel"
 kubectl apply -f $samplemanifest --namespace=$devnamespacelabel
 
-echo "Sleeping for 60 seconds while the ILB gets provisioned and private IP setup"
+echo "Sleeping for 60 seconds while the sample app and ILB gets provisioned and private IP setup"
 sleep 60
 
 echo "Querying All resources in the Namespace"
