@@ -4,7 +4,7 @@
 This is a collection of scripts and demo artifacts for working with/manipulating Azure Kubernetes Services (AKS)
 
 **NOTE:**  
-All bash script files use the Azure CLI for automation, you need at least version 2.0.81 (or greater).  The top of most script files contain variables you need to review and/or set accordingly.  
+All bash script files use the Azure CLI for automation, you need at least version 2.0.81 (or greater).  The top of most script files contain variables you need to review and/or set accordingly.  There are several comments throughout the scripts/files to explain what the script is doing and how given lines/commands will execute.
 
 Example #1:  Build an AKS Cluster that is:
 * Deployed to a private VNet (Advanced Networking with CNI) 
