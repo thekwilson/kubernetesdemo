@@ -12,10 +12,11 @@ devgroupid="" #empty will be queried/populated in the script
 devusernameupn="" #optionally used if wanting to target a user
 devuserid="" #empty will be queried/populated in the script
 # The name you want to use for the Kubernetes Namespace you will create
-devnamespacelabel="dev"
+devnamespacelabel="dev2"
 # The file name of the YAML manifest which defines your restricted role
 # Kubernetes assumes deny by default, so in your rules you are enabling resources (in api groups) & verbs
-devroledefinitionfile="RestrictdDevNamespaceRole.yml"
+# NOTE: This file has a reference to the namespace so be sure to update manually or dynaically in script.
+devroledefinitionfile="RestrictedDevNamespaceRole.yml" 
 # This is the name value from the Role definition above and used during Role Binding (assignment)
 devrolename="dev-user-restricted-access"
 devrolebindingname=$devrolename"-binding"
@@ -33,7 +34,7 @@ echo "Using the manifest file:" $devroledefinitionfile
 kubectl auth reconcile -f $devroledefinitionfile 
 
 echo "Looking up the object id for AAD group: $devgroupname"
-devgroupid = $(az ad group show -g $devgroupname --query objectId -o tsv)
+devgroupid=$(az ad group show -g $devgroupname --query objectId -o tsv)
 echo "Retrieved AAD Group Object ID: $devgroupid"
 
 echo "Assigning the AAD Group: $devgroupname ($devgroupid) to the Kubernetes restricted dev role: $devrolename in the namespace: $devnamespacelabel"

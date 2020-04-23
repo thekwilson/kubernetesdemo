@@ -2,7 +2,7 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: dev-user-restricted-access
-  #namespace: dev
+  namespace: dev
 rules: #These are example rules that show how you can limit CRUD operations (verbs) agains the K8s API
 - apiGroups: [""] # This example reduces the access to create/delete services and just leaves read/view operations
   resources: ["service"]
