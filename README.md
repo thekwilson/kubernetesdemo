@@ -9,7 +9,7 @@ Example #1:  Build an AKS Cluster that is:
 * Deployed to a private VNet (Advanced Networking with CNI) 
 * Integratd with Azure Active Directory (AAD) for RBAC Authorization
 * The primary scripts to run are:
-    * [BuildBaselineVNet4CNI.sh](BuildBaselineVNet4CNI.sh) (OPTIONAL) - script to automate creating an RG with a VNET & Subnet for hosting AKS.  You can skip this script if you have existing resources.
+    * [BuildBaselineVNet4CNI.sh](BuildBaselineVNet4CNI.sh) (OPTIONAL) - script to automate creating an RG with a VNET & Subnet for hosting AKS.  You can skip this script if you have existing resources. 
     * [CreateAADApps.sh](CreateAADApps.sh) (OPTIONAL) - script to automate the creation of AAD App Registrations & service principals needed to support the integration of AAD for Kubernetes RBAC security.  You can skip this if you want to use existing accounts registrations/sps or manually create these in AAD.
     * [buildAADAKSCluster.sh](buildAADAKSCluster.sh) - primary script to call the command to create the AKS Cluster
 
