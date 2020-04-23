@@ -9,9 +9,9 @@ Example #1:  Build an AKS Cluster that is:
 * Deployed to a private VNet (Advanced Networking with CNI) 
 * Integratd with Azure Active Directory (AAD) for RBAC Authorization
 * The primary scripts to run are:
-    * [BuildBaslineVNET4CNI.sh](BuildBaslineVNET4CNI.sh) (OPTIONAL) - script to automate creating an RG with a VNET & Subnet for hosting AKS.  You can skip this script if you have existing resources.
+    * [BuildBaselineVNET4CNI.sh](BuildBaselineVNET4CNI.sh) (OPTIONAL) - script to automate creating an RG with a VNET & Subnet for hosting AKS.  You can skip this script if you have existing resources.
     * [CreateAADApps.sh](CreateAADApps.sh) (OPTIONAL) - script to automate the creation of AAD App Registrations & service principals needed to support the integration of AAD for Kubernetes RBAC security.  You can skip this if you want to use existing accounts registrations/sps or manually create these in AAD.
-    * [buildADAKSCluster.sh](buildADAKSCluster.sh) - primary script to call the command to create the AKS Cluster
+    * [buildAADAKSCluster.sh](buildAADAKSCluster.sh) - primary script to call the command to create the AKS Cluster
 
 Example #2: Secure Objects in Kubernetes with AAD by:
 * Creating a Custom Role in Azure to support AAD User/Group Kubernetes credential access with reduced permissions
@@ -33,7 +33,7 @@ Example #3: Provision a sample/example Kubernetes Application that:
 * Targets a specific Namespace (typically Namespace provisioned above)
 * Deploys a basic web app that can be browsed on 80/442 over the private IP issued
 * The primary scripts to run:
-    * [DeploySampleILBApp.sh](DeploySampleILBApp.sh) -
+    * [DeployInternalLoadBalancer.sh](DeployInternalLoadBalancer.sh) -
 
 Example #4: Provision a new AKS Cluster that is using a **preview feature**  to control cluster egress and use UDR routes verses the default Public IP and LB for Cluster internet egress (outbound traffic)
 * See this article with example steps: https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
