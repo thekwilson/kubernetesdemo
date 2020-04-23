@@ -1,4 +1,5 @@
-# Kubernetes Scripting & Example Building Content (SAMPLE CODE)
+# Kubernetes Provisioning Scripting & Example Building Content 
+## (THIS IS SAMPLE CODE)
 
 This is a collection of scripts and demo artifacts for working with/manipulating Azure Kubernetes Services (AKS)
 
