@@ -7,7 +7,7 @@
 # contributor
 
 #variables (constants) used in the scripts
-devnamespacelabel="dev2"
+devnamespacelabel="dev4"
 
 #the name of the VNet where your AKS cluster is deployed (assumes CNI)
 aksvnetname="bak8sClusterVNET"

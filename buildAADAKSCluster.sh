@@ -31,6 +31,7 @@ echo "Process Starting: " $starttime
 echo "Create Resource Group for the Kubernetes cluster (AKS)"
 az group create --name $aksrgname --location $akslocation
 
+#NOTE: This command can take from 10 - 40 minutes to run
 echo "Create the AKS Cluster with RBAC & Azure AD Properties in the new Resource Group"
 az aks create --resource-group $aksrgname --name $aksclustername --node-count 2 --generate-ssh-keys \
 --network-plugin azure \

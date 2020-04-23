@@ -15,7 +15,6 @@ Example #1:  Build an AKS Cluster that is:
     * [buildAADAKSCluster.sh](buildAADAKSCluster.sh) - primary script to call the command to create the AKS Cluster
 
 Example #2: Secure Objects in Kubernetes with AAD by:
-* Creating a Custom Role in Azure to support AAD User/Group Kubernetes credential access with reduced permissions
 * Creating a new Namespace in Kubernetes
 * Applying a new Kubernetes Role Definition manifest/yml file that enables whatever APIs and verbs that role needs 
 * Applying a Kubernetes Role Binding to bind the role created to AAD object (users and groups)
@@ -32,7 +31,7 @@ Then you can validate with Kubectl commands that you only have access to the Nam
 Example #3: Provision a sample/example Kubernetes Application that:
 * Uses an Internal Load Balancer for private IP ingress 
 * Targets a specific Namespace (typically Namespace provisioned above)
-* Deploys a basic web app that can be browsed on 80/443 over the private IP issued
+* Deploys a basic web app that can be browsed on 80 over the private IP issued
 * The primary scripts to run:
     * [DeployInternalLoadBalancer.sh](DeployInternalLoadBalancer.sh)
 
